@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="news">
+
+	 <select id="select" parameterType="String" resultType="newsArticleDTO">
+		SELECT * FROM news_article WHERE news_article_id = #{value} 
+	</select>
+	
+	 <select id="newspaperCountSelect" resultType="int">
+		select count(distinct newspaper) from news_article; 
+	</select>
+  
+	<resultMap type="newsArticleDTO" id="rs">
+<!-- 		<result property="continent" column="continent" /> -->
+	</resultMap>
+		
+	
+	
+	
+	
+</mapper>

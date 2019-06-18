@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="kr.co.search.db.NewsArticleDTO2" alias="newsArticleDTO" />
+	</typeAliases>
+	<!-- <mappers>
+		<mapper resource="rew/Member_SQL.xml" />
+	</mappers>  이미 등록이 되어 있다는 오류가 생긴다-->
+</configuration>
+<!-- DTO를 등록하고 싶으면여기다가 등록! -->
+
