@@ -3,63 +3,63 @@
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
 	<!-- Appenders -->
-	<appender name="console" class="org.apache.log4j.ConsoleAppender">
-		<param name="Target" value="System.out" />
-		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
-		</layout>
-	</appender>
+<!-- 	<appender name="console" class="org.apache.log4j.ConsoleAppender"> -->
+<!-- 		<param name="Target" value="System.out" /> -->
+<!-- 		<layout class="org.apache.log4j.PatternLayout"> -->
+<!-- 			<param name="ConversionPattern" value="%-5p: %c - %m%n" /> -->
+<!-- 		</layout> -->
+<!-- 	</appender> -->
 	
-	<appender name="index_batch" class="org.apache.log4j.DailyRollingFileAppender">
-		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
-		<param name="File" value="/Users/kwangjaejoe/Documents/log/index_batch.log" />
-		<param name="Threshold" value="DEBUG" />
-		<param name="Append" value="true" />
-		<param name="DatePattern" value="'.'yyyy-MM-dd" />
-		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%d %-5p [%c] %m%n" />
-		</layout>
-	</appender>
+<!-- 	<appender name="index_batch" class="org.apache.log4j.DailyRollingFileAppender"> -->
+<!-- 		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" /> -->
+<!-- 		<param name="File" value="D:\\down" /> -->
+<!-- 		<param name="Threshold" value="DEBUG" /> -->
+<!-- 		<param name="Append" value="true" /> -->
+<!-- 		<param name="DatePattern" value="'.'yyyy-MM-dd" /> -->
+<!-- 		<layout class="org.apache.log4j.PatternLayout"> -->
+<!-- 			<param name="ConversionPattern" value="%d %-5p [%c] %m%n" /> -->
+<!-- 		</layout> -->
+<!-- 	</appender> -->
 	
 	<!-- Application Loggers -->
-	<logger name="kr.co.search">
-		<level value="info" />
-	</logger>
+<!-- 	<logger name="kr.co.search"> -->
+<!-- 		<level value="info" /> -->
+<!-- 	</logger> -->
 	
-	<logger name="kr.co.search.Crawling" additivity = "false">
-		<level value="info" />
-	</logger>
+<!-- 	<logger name="kr.co.search.Crawling" additivity = "false"> -->
+<!-- 		<level value="info" /> -->
+<!-- 	</logger> -->
 	
-	<logger name="kr.co.search.controller">
-		<level value="debug" />
+<!-- 	<logger name="kr.co.search.controller"> -->
+<!-- 		<level value="debug" /> -->
 		<!-- <appender-ref ref="console" /> -->
-		<appender-ref ref="console" />
-		<appender-ref ref="index_batch" />
-	</logger>
+<!-- 		<appender-ref ref="console" /> -->
+<!-- 		<appender-ref ref="index_batch" /> -->
+<!-- 	</logger> -->
 	
 	
 	<!-- 3rdparty Loggers -->
-	<logger name="org.springframework.core">
-		<level value="info" />
-	</logger>
+<!-- 	<logger name="org.springframework.core"> -->
+<!-- 		<level value="info" /> -->
+<!-- 	</logger> -->
 	
-	<logger name="org.springframework.beans">
-		<level value="info" />
-	</logger>
+<!-- 	<logger name="org.springframework.beans"> -->
+<!-- 		<level value="info" /> -->
+<!-- 	</logger> -->
 	
-	<logger name="org.springframework.context">
-		<level value="info" />
-	</logger>
+<!-- 	<logger name="org.springframework.context"> -->
+<!-- 		<level value="info" /> -->
+<!-- 	</logger> -->
 
-	<logger name="org.springframework.web">
-		<level value="info" />
-	</logger>
+<!-- 	<logger name="org.springframework.web"> -->
+<!-- 		<level value="info" /> -->
+<!-- 	</logger> -->
 
 
 	<!-- Root Logger -->
-	<root>
-		<priority value="warn" />
-		<appender-ref ref="console" />
-	</root>
+<!-- 	<root> -->
+<!-- 		<priority value="warn" /> -->
+<!-- 		<appender-ref ref="console" /> -->
+<!-- 	</root> -->
 	
 </log4j:configuration>

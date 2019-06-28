@@ -12,11 +12,11 @@ public class NewsArticleDAO {
 //	tom-mysql.c8xsfxnysoko.ap-northeast-2.rds.amazonaws.com
 	// newssite
 
-	private String url = "jdbc:mysql://tom-mysql.c8xsfxnysoko.ap-northeast-2.rds.amazonaws.com:3306/newssite?useSSL=false&characterEncoding=utf8";
+	private String url = "jdbc:mysql://localhost:3306/newssite?useSSL=false&characterEncoding=utf8";
 	// 데이터 베이스 url
-	private String user = "newssite";
+	private String user = "root";
 	// mysql root 계정 아이디
-	private String password = "newssitenewssite";
+	private String password = "1234";
 	// mysql root 계정 비밀번호
 	private String sql;
 	// sql문 문자열

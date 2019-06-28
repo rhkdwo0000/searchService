@@ -107,12 +107,12 @@ public class SearchController {
 		System.out.println("끝년도 : "+yearSecond);
 		System.out.println("끝월 : "+monthSecond);
 		System.out.println("끝날 : "+daySecond);
-		System.out.println("끝날 : "+page);
+		System.out.println("페이지 : "+page);
 		
 		 int newspaperTemp = NewsArticleDAO.newspaperCount();
 		
-		log.debug("------------------- INDEX NEW ComplexContent -------------------");
-		log.debug("text["+text+"] , content["+content+"] , title["+title+"]");
+//		log.debug("------------------- INDEX NEW ComplexContent -------------------");
+//		log.debug("text["+text+"] , content["+content+"] , title["+title+"]");
 		
 		
 		
@@ -380,7 +380,6 @@ public class SearchController {
 							"}",
 				    ContentType.APPLICATION_JSON); 
 			
-			
 		}else if((content == null && title !=null && newspaper.size() != newspaperTemp) || (content.equals("null") && title !=null && newspaper.size() !=112)) {
 			System.out.println("6");
 			entity1 = new NStringEntity(
@@ -411,33 +410,26 @@ public class SearchController {
 			
 		}
 		
-		
-		
-		
 		Response response = restClient.performRequest("post", "/news_article_openkorea/news_article_openkorea/_search",
 				Collections.singletonMap("pretty", "true"), entity1);
 
 		restClient.close();
+		
 		String temp = EntityUtils.toString(response.getEntity());// getEntity는 스트림형태로 가져오기 때문에 딱 한번만 읽고 다시 돌아갈 수 없다.
 
 		e_jsonobject = (JSONObject) e_jsonparser.parse(temp);
 
-
 		JSONArray jsonarray = ((JSONArray) ((JSONObject) (e_jsonobject.get("hits"))).get("hits"));
 
-		 
 		session.setAttribute("total", jsonarray.size());
 		 model.addAttribute("total", jsonarray.size());
+		 System.out.println("사이즈 : "+jsonarray.size());
 		ArrayList<NewsArticleDTO2> list = new ArrayList<NewsArticleDTO2>();
 		NewsArticleDTO2 dto = null;
 		for (int i = 0; i < jsonarray.size(); i++) {
 
 //     		System.out.println(((JSONObject)jsonarray.get(i)).get("_id"));
 
-			// 1. null 체크
-			// 2. 파일존재 유무 체크
-			// 3. 존재하면 이미지io를 통해서 이미지 저장하지말고 파일이름 dto에 다시 셋
-			// 4. 존재하지않으면 이미지 io를 통해서 이미지 저장 후 파일이름 dto에
 			dto = NewsArticleDAO.searchSelect((String) ((JSONObject) jsonarray.get(i)).get("_id"));
 			
 			
@@ -467,7 +459,5 @@ public class SearchController {
 		
 		return "joe/search";
 	}
-
-
 
 }
